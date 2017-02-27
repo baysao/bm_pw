@@ -1,0 +1,64 @@
+#stream_analyzer {
+    background-color: transparent;
+}
+
+#stream_analyzer .block-border {
+    border: 1px solid #cccccc!important;
+}
+
+#stream_analyzer .block-btn {
+    margin: 2px;
+    padding: 5px;
+    width: 24%;
+}
+
+#stream_analyzer .block-btn:first-child {
+    margin-left: 15px;
+}
+
+#stream_analyzer .block-btn:last-child {
+    /*margin-right: 0px;*/
+}
+
+#stream_analyzer .row-three .col-md-6, #stream_analyzer .row-four .col-md-6 {
+    width: 49% !important;
+}
+
+#stream_analyzer .row-three .col-md-6:first-child {
+    margin-right: 22px;
+}
+
+#stream_analyzer .row-four .col-md-6:first-child {
+    margin-right: 22px;
+}
+
+.top_controls .qa_title, .top_controls .qa_timeRefresh {
+    z-index: 123;
+}
+.top_controls .qa_title {
+    line-height: 50px;
+    /*display: inline-block;*/
+    /*position: absolute;*/
+    /*margin-right: 18px;*/
+    /*vertical-align: top;*/
+    /*font-size: 11px;*/
+}
+
+.top_controls .periodSelector {
+    float: right !important;
+}
+
+.top_controls .qa_timeRefresh {
+    padding: 6px 0px;
+    float: right;
+    max-height: 40px;
+    font-size: 12px;
+}
+
+.top_controls .qa_timeRefresh option {
+    font-size: 11px;
+}
+
+#stream_analyzer .row-block {
+    margin: 10px 0px;
+}

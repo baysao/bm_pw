@@ -1,0 +1,15 @@
+{
+	"name": "QA",
+	"description": "QualityAssurance",
+	"version": "1.0.0",
+	"keywords": [],
+	"homepage": "http://sbddigital.com",
+	"license": "GPL v3+",
+	"authors": [
+		{
+			"name"      : "Vu Tran",
+			"email"     : "vutp@saobacdau.vn",
+			"homepage"  : "http://sbddigital.com"
+		}
+	]
+}

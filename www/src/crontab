@@ -1,0 +1,3 @@
+# m h  dom mon dow   command
+0 * * * * /usr/share/nginx/www/archive_hourly.sh
+0 * * * * sleep 1800 && /usr/share/nginx/www/archive_hourly.sh

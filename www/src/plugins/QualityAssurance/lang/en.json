@@ -1,0 +1,16 @@
+{
+  "QualityAssurance": {
+    "QualityAssurance": "Quality Assurance",
+    "TopLinkTooltip": "Compare Web Analytics stats for all of your Websites.",
+    "Audience": "Audience",
+    "StartupTime": "Startup Time",
+    "Bitrate": "Bitrate",
+    "RebufferTime": "Rebuffer Time",
+    "AudienceByFormat": "Audience By Format",
+    "Time": "Time",
+    "AudienceByFormat": "Audience size by format",
+    "AudienceByConnection": "Audience size by connection speed",
+    "AudienceByCategory": "Audience size by category",
+    "AudienceByGeoraphy": "Audience size by georaphy"
+  }
+}
