@@ -29,8 +29,8 @@ class Widgets extends \Piwik\Plugin\Widgets
 
     protected function init()
     {
-        $this->addWidget('CoreHome_SupportPiwik', 'getDonateForm');
-        $this->addWidget('Installation_Welcome', 'getPromoVideo');
+//        $this->addWidget('CoreHome_SupportPiwik', 'getDonateForm');
+//        $this->addWidget('Installation_Welcome', 'getPromoVideo');
     }
 
     /**

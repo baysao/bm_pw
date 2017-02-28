@@ -11,7 +11,7 @@
 {% endset %}
 
 {% if isPiwikDemo or (latest_version_available and hasSomeViewAccess and not isUserIsAnonymous) or (isSuperUser and adminMenu is defined and adminMenu) %}
-<div piwik-expand-on-hover
+<!--div piwik-expand-on-hover
      id="header_message"
      class="piwikSelector borderedControl {% if isPiwikDemo or not latest_version_available %}header_info{% else %}{% endif %} {% if isPiwikDemo %}isPiwikDemo{% else %}piwikTopControl{% endif %} {% if latest_version_available %}update_available{% endif %}"
         >
@@ -57,7 +57,7 @@
 
         {{ 'General_YouAreCurrentlyUsing'|translate(piwik_version) }}
     </div>
-</div>
+</div-->
 
 <div style="clear:right"></div>
 {% endif %}

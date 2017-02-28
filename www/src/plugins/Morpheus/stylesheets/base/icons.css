@@ -300,3 +300,7 @@
 	content: "\e659";
 }
 
+li[id="UserId_menuGetUsers"], li[id="Live_indexVisitorLog"], li[id="VisitFrequency_index"], li[id="Actions_menuGetOutlinks"], li[id="Actions_menuGetDownloads"],li[id="Actions_indexSiteSearch"],li[id="Actions_menuGetExitPageUrls"], li[id="Actions_menuGetEntryPageUrls"], li[id="Referrers_getSearchEnginesAndKeywords"], li[id="Referrers_indexWebsites"], li[id="Referrers_menuGetCampaigns"] {
+	display: none
+}
+

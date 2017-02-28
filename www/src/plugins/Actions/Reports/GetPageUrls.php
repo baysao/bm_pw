@@ -31,9 +31,9 @@ class GetPageUrls extends Base
         $this->order   = 2;
         $this->metrics = array('nb_hits', 'nb_visits');
         $this->processedMetrics = array(
-            new AverageTimeOnPage(),
-            new BounceRate(),
-            new ExitRate(),
+            //new AverageTimeOnPage(),
+            //new BounceRate(),
+            //new ExitRate(),
             new AveragePageGenerationTime()
         );
 
@@ -53,7 +53,7 @@ class GetPageUrls extends Base
     {
         $metrics = parent::getMetricsDocumentation();
         $metrics['nb_visits'] = Piwik::translate('General_ColumnUniquePageviewsDocumentation');
-        $metrics['bounce_rate'] = Piwik::translate('General_ColumnPageBounceRateDocumentation');
+        //$metrics['bounce_rate'] = Piwik::translate('General_ColumnPageBounceRateDocumentation');
 
         return $metrics;
     }
@@ -61,8 +61,7 @@ class GetPageUrls extends Base
     public function configureView(ViewDataTable $view)
     {
         $view->config->addTranslation('label', $this->dimension->getName());
-        $view->config->columns_to_display = array('label', 'nb_hits', 'nb_visits', 'bounce_rate',
-                                                  'avg_time_on_page', 'exit_rate', 'avg_time_generation');
+        $view->config->columns_to_display = array('label', 'nb_hits', 'nb_visits', 'avg_time_generation');
 
         $this->addPageDisplayProperties($view);
         $this->addBaseDisplayProperties($view);

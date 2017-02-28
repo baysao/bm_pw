@@ -132,6 +132,7 @@
                 <input type="hidden" name="module" value="{{ loginModule }}"/>
                 <input type="hidden" name="action" value="resetPassword"/>
             </form>
+	{#
             <p id="nav">
                 {{ postEvent("Template.loginNav", "top") }}
                 <a id="login_form_nav" href="#"
@@ -150,6 +151,7 @@
             <div id="lost_password_instructions" style="display:none;">
                 <p class="message">{{ 'Login_ResetPasswordInstructions'|translate }}</p>
             </div>
+	#}
         {% endif %}
     </section>
 

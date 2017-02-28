@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>videojs-contrib-hls embed</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/alt/video-js-cdn.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+			<video
+					id="player-01"
+					class="video-js vjs-default-skin"
+					controls
+					preload="auto"
+					width="640" height="268"
+					title="Video.js Example"
+					data-setup='{}'>
+				<source src="http://www.streambox.fr/playlists/x36xhzz/x36xhzz.m3u8" type="application/x-mpegURL">
+				<!-- <source src="prog_index.m3u8" type="application/x-mpegURL"> -->
+			</video>
+		</div>
+			<div class="col-md-6">
+			<video
+					id="player-02"
+					class="video-js vjs-default-skin"
+					controls
+					preload="auto"
+					width="640" height="268"
+					title="Video.js Example"
+					data-setup='{}'>
+				<source src="http://www.streambox.fr/playlists/x36xhzz/x36xhzz.m3u8" type="application/x-mpegURL">
+				<!-- <source src="prog_index.m3u8" type="application/x-mpegURL"> -->
+			</video>
+		</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		var _paq = _paq || [];
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		_paq.push(['enableHeartBeatTimer']);
+
+		_paq.push(['MediaAnalytics::enableDebugMode']);
+		(function() {
+			// var u="//113.164.27.59/pw1/";
+			// var u="//piwik.dev/";
+			var u="//113.164.27.59:4002/";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			// _paq.push(['setSiteId', '27']);
+			_paq.push(['setSiteId', '1012']);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<script src="tracker.ibimax.js"></script>
+</body>
+</html>
