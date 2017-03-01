@@ -1,4 +1,5 @@
 #!/bin/sh
+mount -t tmpfs /dev/shm /usr/share/nginx/www/tmp
 app_config=/usr/share/nginx/www/config/config.ini.php
 console=/usr/share/nginx/www/console
 awk -v REDIS_PORT=$REDIS_PORT \
