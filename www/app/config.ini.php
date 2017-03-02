@@ -170,3 +170,7 @@ port=__REDIS_PORT__
 [MediaAnalytics]
 media_analytics_exclude_query_parameters = "enablejsapi,player_id"
 
+[QoS]
+qosApiAddress="http://172.16.64.169:8001/api/v1/stat"
+qosLastMinuteUpdate=5
+
