@@ -21,7 +21,7 @@ cur(){
 deleteOld(){
 	tmp=`mktemp`
 	n=$1
-	if [ ! -z "$n" ];then n = 7;fi
+	if [ -z "$n" ];then n=7;fi
 	date1=`date +"%Y_%m" -d "$n days ago"`
 	date=`date +"%Y_%m_%d" -d "$n days ago"`
 	old="piwik_log_link_visit_action_${date}"
