@@ -1,4 +1,7 @@
 #!/bin/sh
+mkdir -p /usr/share/nginx/www/tmp
+chmod 777 -R /usr/share/nginx/www/tmp
+chown www-data.www-data -R /usr/share/nginx/www/tmp
 mount -t tmpfs /dev/shm /usr/share/nginx/www/tmp
 app_config=/usr/share/nginx/www/config/config.ini.php
 console=/usr/share/nginx/www/console
