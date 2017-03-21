@@ -22,8 +22,8 @@ deleteOld(){
 	tmp=`mktemp`
 	n=$1
 	if [ -z "$n" ];then n=7;fi
-	date1=`date +"%Y_%m" -d "$n days ago"`
-	date=`date +"%Y_%m_%d" -d "$n days ago"`
+	date1=`date -u +"%Y_%m" -d "$n days ago"`
+	date=`date -u +"%Y_%m_%d" -d "$n days ago"`
 	old="piwik_log_link_visit_action_${date}"
 	echo "show tables like 'piwik_log_link_visit_action_${date1}_%';" | $mysql | awk -v old=$old '$1 < old {print "drop table",$1,";"}' > $tmp
 	$mysql < $tmp
@@ -108,7 +108,7 @@ reduceHourly() {
 	if [ $hour -lt 10 ];then hour=0$hour;fi
 #	if [ $min -lt 10 ];then min=0$min;fi
 	mmago=`echo |awk '{print 7*60 + 40}'`
-	now=`date +%Y-%m-%d-%H-%M -d "$mmago minutes ago"`
+	now=`date  -u +%Y-%m-%d-%H-%M -d "$mmago minutes ago"`
 	if [ ${date}-${hour}-${min} \> $now ];then
 		exit 0
 	fi
