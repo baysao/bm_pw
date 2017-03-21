@@ -24,7 +24,7 @@ stat(){
         tmp=`mktemp`
         echo "select 'tracker=',count(*) from piwik_log_link_visit_action_tracker;"  >> $tmp
         echo "select 'action=',count(*) from piwik_log_link_visit_action;" >> $tmp
-        $mysql < $tmp  | while read a b;do echo -n $a$b";";done
+        $mysql < $tmp  | while read a b;do echo -n $a$b";";done;echo
         rm -f $tmp
 }
 
