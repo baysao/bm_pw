@@ -18,12 +18,24 @@ cur(){
 	$mysql < $tmp
 	rm -f $tmp
 }
+
+
+stat(){
+        tmp=`mktemp`
+        echo "select 'tracker=',count(*) from piwik_log_link_visit_action_tracker;"  >> $tmp
+        echo "select 'action=',count(*) from piwik_log_link_visit_action;" >> $tmp
+        $mysql < $tmp  | while read a b;do echo -n $a$b";";done;echo
+        rm -f $tmp
+}
+
+
+
 deleteOld(){
 	tmp=`mktemp`
 	n=$1
 	if [ -z "$n" ];then n=7;fi
-	date1=`date +"%Y_%m" -d "$n days ago"`
-	date=`date +"%Y_%m_%d" -d "$n days ago"`
+	date1=`date -u +"%Y_%m" -d "$n days ago"`
+	date=`date -u +"%Y_%m_%d" -d "$n days ago"`
 	old="piwik_log_link_visit_action_${date}"
 	echo "show tables like 'piwik_log_link_visit_action_${date1}_%';" | $mysql | awk -v old=$old '$1 < old {print "drop table",$1,";"}' > $tmp
 	$mysql < $tmp
@@ -72,27 +84,6 @@ load_append(){
         $mysql < $tmp
         rm -f $tmp
 }
-reduce2HourAgo() {
-	tmp=`mktemp`
-	min=`echo 7*60-10|bc`
-	date1=`date "+%Y-%m-%d %H" -d "$min minutes ago"`
-	m=`date "+%M" -d "$min minutes ago"`
-	m1=`echo $m - $m%10 | bc`
-	date="$date1:$m1:00"
-	action=piwik_log_link_visit_action
-#	count=`echo "select count(*) from $action;" | $mysql`
-#	if [ $count -lt 2000 ];then
-#		exit 0
-#	fi
-	echo "drop table if exists ${action}_;" >> $tmp
-	echo "create table if not exists ${action}_ like $action;" >> $tmp
-	echo "insert into ${action}_ select * from $action where server_time >= '$date';" >> $tmp
-	echo "rename table $action to ${action}__, ${action}_ to $action;" >> $tmp
-	echo "drop table ${action}__;" >> $tmp
-	cat $tmp
-#	$mysql < $tmp
-	rm -f $tmp
-}
 reduceHourly() {
 	prefix=$1
 	action=piwik_log_link_visit_action
@@ -107,8 +98,8 @@ reduceHourly() {
 	min=`echo $min1 | awk '{print $1 - $1%10}'`
 	if [ $hour -lt 10 ];then hour=0$hour;fi
 #	if [ $min -lt 10 ];then min=0$min;fi
-	mmago=`echo |awk '{print 7*60 + 40}'`
-	now=`date +%Y-%m-%d-%H-%M -d "$mmago minutes ago"`
+	mmago=`echo |awk '{print 40}'`
+	now=`date  -u +%Y-%m-%d-%H-%M -d "$mmago minutes ago"`
 	if [ ${date}-${hour}-${min} \> $now ];then
 		exit 0
 	fi
